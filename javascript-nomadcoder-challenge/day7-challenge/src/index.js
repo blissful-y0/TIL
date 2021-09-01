@@ -31,4 +31,16 @@ const onClickPlayButton = (event) => {
   }
 };
 
+const onChange = (event) => {
+  if (event.target.value > parseInt(selectedNumber.value)) {
+    result.textContent = "입력하신 숫자가 최대값보다 큽니다";
+    button.disable = true;
+    result.style.visibility = "visible";
+  } else {
+    result.textContent = "";
+    result.style.visibility = "visible";
+  }
+};
+
 button.addEventListener("click", onClickPlayButton);
+submittedNumber.addEventListener("keyup", onChange);
